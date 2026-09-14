@@ -53,23 +53,19 @@
       word-break: keep-all;
     }
     
-    /* 1페이지 메인 표지 박스 (사진 없음) */
-    .intro-box {
-      background: rgba(15, 25, 35, 0.5);
-      border: 2px dashed #ff4655;
-      border-radius: 12px;
-      padding: 60px 20px;
+    /* 1페이지 메인 이미지 스타일 */
+    .image-container {
       margin: 20px 0 30px 0;
+      display: flex;
+      justify-content: center;
     }
-    .intro-subtitle {
-      font-size: 1.2rem;
-      color: #ffd700;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-    .intro-text {
-      font-size: 0.95rem;
-      color: #a0a8b3;
+    .profile-img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 16px;
+      border: 3px solid #ff4655;
+      box-shadow: 0 8px 20px rgba(255, 70, 85, 0.3);
+      object-fit: cover;
     }
 
     /* 2~4페이지 카드 영역 (사진 배경) */
@@ -195,21 +191,20 @@
       <h1 class="title">김울이 레전드인 이유</h1>
     </div>
 
-    <!-- 1페이지 (메인 표지 - 사진 없음) -->
+    <!-- 1페이지 (첫번째 사진: 11111.jpg) -->
     <div id="page-1">
-      <div class="intro-box">
-        <p class="intro-subtitle">⚠️ 레전드 주의 ⚠️</p>
-        <p class="intro-text">아래 버튼을 눌러 분석 결과를 확인하세요.</p>
+      <div class="image-container">
+        <img src="11111.jpg" alt="김울 대표 사진" class="profile-img">
       </div>
       <div class="btn-container">
         <button id="next-btn-1" class="action-btn">다음</button>
       </div>
     </div>
 
-    <!-- 2페이지 (레전드 게임 실력 - 새로운 파일명 00000111.jpg 적용) -->
+    <!-- 2페이지 (두번째 사진: 22222.jpg) -->
     <div id="page-2" class="hidden">
       <div class="content-card">
-        <img src="00000111.jpg" alt="게임 사진" class="card-bg-img">
+        <img src="22222.jpg" alt="게임 사진" class="card-bg-img">
         <div class="card-overlay"></div>
         <div class="card-body">
           <div class="card-title-box">
@@ -226,10 +221,10 @@
       </div>
     </div>
 
-    <!-- 3페이지 (레전드 인성) -->
+    <!-- 3페이지 (세번째 사진: 33333.jpg) -->
     <div id="page-3" class="hidden">
       <div class="content-card">
-        <img src="1000019884.jpg" alt="인성 사진" class="card-bg-img">
+        <img src="33333.jpg" alt="인성 사진" class="card-bg-img">
         <div class="card-overlay"></div>
         <div class="card-body">
           <div class="card-title-box">
@@ -246,10 +241,10 @@
       </div>
     </div>
 
-    <!-- 4페이지 (그냥 JOAT) -->
+    <!-- 4페이지 (네번째 사진: 44444.jpg) -->
     <div id="page-4" class="hidden">
       <div class="content-card">
-        <img src="1000019948.jpg" alt="JOAT 사진" class="card-bg-img">
+        <img src="44444.jpg" alt="JOAT 사진" class="card-bg-img">
         <div class="card-overlay"></div>
         <div class="card-body">
           <div class="card-title-box">
