@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김울이 레전드인 이유</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f1923;
+      color: #ece8e1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 650px;
+      background: #1f2326;
+      border-radius: 12px;
+      padding: 32px 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      border: 1px solid #36393e;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header {
+      margin-bottom: 24px;
+    }
+    .tag {
+      display: inline-block;
+      background-color: #ff4655;
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+    .title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #ffffff;
+      word-break: keep-all;
+    }
+    
+    /* 1페이지 스타일 */
+    .image-container {
+      margin: 20px 0 30px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .profile-img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 16px;
+      border: 3px solid #ff4655;
+      box-shadow: 0 8px 20px rgba(255, 70, 85, 0.3);
+      object-fit: cover;
+    }
+
+    /* 공통 배경 카드 스타일 (2페이지 & 3페이지) */
+    .content-card {
+      position: relative;
+      background-size: cover;
+      background-position: center 20%;
+      border-radius: 12px;
+      padding: 20px 16px 24px 16px;
+      border: 2px solid #ff4655;
+      margin-bottom: 20px;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    /* 페이지별 배경 이미지 설정 */
+    .page-2-card {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%), url('1000023921.jpg');
+    }
+    .page-3-card {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%), url('1000019884.jpg');
+    }
+    
+    /* 제목 강조 스타일 */
+    .card-title-box {
+      background: rgba(15, 25, 35, 0.65);
+      backdrop-filter: blur(4px);
+      border-left: 4px solid #ffd700;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+      border-radius: 0 8px 8px 0;
+      text-align: left;
+    }
+    .card-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #ffd700;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 215, 0, 0.3);
+      letter-spacing: -0.5px;
+    }
+
+    .card-desc {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #ffffff;
+      word-break: keep-all;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 16px;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    /* 버튼 네비게이션 스타일 */
+    .btn-container {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+    .action-btn {
+      background-color: #ff4655;
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      flex: 1;
+    }
+    .action-btn:hover {
+      background-color: #e03e4d;
+    }
+    .action-btn:active {
+      transform: scale(0.98);
+    }
+    .secondary-btn {
+      background-color: #4a525d;
+    }
+    .secondary-btn:hover {
+      background-color: #383e47;
+    }
+
+    .hidden {
+      display: none;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 0.85rem;
+      color: #76808c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <span class="tag">LEGEND ANALYSIS</span>
+      <h1 class="title">김울이 레전드인 이유</h1>
+    </div>
+
+    <!-- 첫번째 페이지 (메인 이미지) -->
+    <div id="page-1">
+      <div class="image-container">
+        <img src="1000020829.webp" alt="김울 사진 1" class="profile-img">
+      </div>
+      <div class="btn-container">
+        <button id="next-btn-1" class="action-btn">다음</button>
+      </div>
+    </div>
+
+    <!-- 두번째 페이지 (레전드 게임 실력) -->
+    <div id="page-2" class="hidden">
+      <div class="content-card page-2-card">
+        <div class="card-title-box">
+          <h2 class="card-title">🔥 레전드 게임 실력</h2>
+        </div>
+        <p class="card-desc">
+          김울은 발로란트 , 리그오브레전드 , FC온라인을 포함한 모든게임을 평균 이하로 못합니다. 특히 발로란트는 모든 계정을 포함한 최소 450랩을 찍었지만 골드에서도 "님 여기티어 맞아요?"라고 들을 정도로 재능이란것이 없다.
+        </p>
+      </div>
+      <div class="btn-container">
+        <button id="prev-btn-2" class="action-btn secondary-btn">이전으로</button>
+        <button id="next-btn-2" class="action-btn">다음</button>
+      </div>
+    </div>
+
+    <!-- 세번째 페이지 (레전드 인성) -->
+    <div id="page-3" class="hidden">
+      <div class="content-card page-3-card">
+        <div class="card-title-box">
+          <h2 class="card-title">😈 레전드 인성</h2>
+        </div>
+        <p class="card-desc">
+          김울은 본인이 직접 약속을 잡고 파탄을 자주냅니다. 예시로는 먼저 노래방에 가자하여 다른사람들은 준비까지 다 하고 밖으로 나왔지만 김울에게 언제나오냐고 하면 "나 힘들어서 안감 ㅅㄱ" 라고 개 레전드 인성을 보여줍니다.
+        </p>
+      </div>
+      <div class="btn-container">
+        <button id="prev-btn-3" class="action-btn secondary-btn">이전으로</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      김울 레전드 분석 페이지
+    </div>
+  </div>
+
+  <script>
+    const page1 = document.getElementById('page-1');
+    const page2 = document.getElementById('page-2');
+    const page3 = document.getElementById('page-3');
+
+    const nextBtn1 = document.getElementById('next-btn-1');
+    const nextBtn2 = document.getElementById('next-btn-2');
+
+    const prevBtn2 = document.getElementById('prev-btn-2');
+    const prevBtn3 = document.getElementById('prev-btn-3');
+
+    // 1페이지 -> 2페이지
+    nextBtn1.addEventListener('click', () => {
+      page1.classList.add('hidden');
+      page2.classList.remove('hidden');
+    });
+
+    // 2페이지 -> 1페이지
+    prevBtn2.addEventListener('click', () => {
+      page2.classList.add('hidden');
+      page1.classList.remove('hidden');
+    });
+
+    // 2페이지 -> 3페이지
+    nextBtn2.addEventListener('click', () => {
+      page2.classList.add('hidden');
+      page3.classList.remove('hidden');
+    });
+
+    // 3페이지 -> 2페이지
+    prevBtn3.addEventListener('click', () => {
+      page3.classList.add('hidden');
+      page2.classList.remove('hidden');
+    });
+  </script>
+
+</body>
+</html>
