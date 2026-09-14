@@ -53,50 +53,71 @@
       word-break: keep-all;
     }
     
-    /* 1페이지 스타일 */
-    .image-container {
+    /* 1페이지 메인 표지 박스 (사진 없음) */
+    .intro-box {
+      background: rgba(15, 25, 35, 0.5);
+      border: 2px dashed #ff4655;
+      border-radius: 12px;
+      padding: 60px 20px;
       margin: 20px 0 30px 0;
-      display: flex;
-      justify-content: center;
     }
-    .profile-img {
-      width: 100%;
-      max-width: 320px;
-      border-radius: 16px;
-      border: 3px solid #ff4655;
-      box-shadow: 0 8px 20px rgba(255, 70, 85, 0.3);
-      object-fit: cover;
+    .intro-subtitle {
+      font-size: 1.2rem;
+      color: #ffd700;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    .intro-text {
+      font-size: 0.95rem;
+      color: #a0a8b3;
     }
 
-    /* 공통 배경 카드 스타일 (2~4페이지) */
+    /* 2~4페이지 카드 영역 (사진 배경) */
     .content-card {
       position: relative;
-      background-size: cover;
-      background-position: center 20%;
       border-radius: 12px;
-      padding: 20px 16px 24px 16px;
       border: 2px solid #ff4655;
       margin-bottom: 20px;
       min-height: 480px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      overflow: hidden;
     }
 
-    /* 중복 확장자에 맞춰 변경된 파일명 */
-    .page-2-card {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%), url('1000023921.jpg.jpg');
+    /* 카드 배경 이미지 태그 */
+    .card-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      z-index: 1;
     }
-    .page-3-card {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%), url('1000019884.jpg.jpg');
+
+    /* 사진 위에 어두운 그라데이션 오버레이 */
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%);
+      z-index: 2;
     }
-    .page-4-card {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%), url('1000019948.jpg.jpg');
+
+    /* 카드 텍스트 내용 */
+    .card-body {
+      position: relative;
+      z-index: 3;
+      padding: 20px 16px 24px 16px;
     }
-    
+
     /* 제목 강조 스타일 */
     .card-title-box {
-      background: rgba(15, 25, 35, 0.65);
+      background: rgba(15, 25, 35, 0.75);
       backdrop-filter: blur(4px);
       border-left: 4px solid #ffd700;
       padding: 10px 14px;
@@ -108,7 +129,7 @@
       font-size: 1.8rem;
       font-weight: 900;
       color: #ffd700;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 215, 0, 0.3);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
       letter-spacing: -0.5px;
     }
 
@@ -118,13 +139,13 @@
       color: #ffffff;
       word-break: keep-all;
       text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       padding: 16px;
       border-radius: 8px;
       text-align: left;
     }
 
-    /* 버튼 네비게이션 스타일 */
+    /* 버튼 스타일 */
     .btn-container {
       margin-top: 10px;
       display: flex;
@@ -174,25 +195,30 @@
       <h1 class="title">김울이 레전드인 이유</h1>
     </div>
 
-    <!-- 첫번째 페이지 (중복 확장자에 맞춰 변경된 파일명) -->
+    <!-- 1페이지 (메인 표지 - 사진 없음) -->
     <div id="page-1">
-      <div class="image-container">
-        <img src="1000020829.webp.webp" alt="김울 사진 1" class="profile-img">
+      <div class="intro-box">
+        <p class="intro-subtitle">⚠️ 레전드 주의 ⚠️</p>
+        <p class="intro-text">아래 버튼을 눌러 분석 결과를 확인하세요.</p>
       </div>
       <div class="btn-container">
         <button id="next-btn-1" class="action-btn">다음</button>
       </div>
     </div>
 
-    <!-- 두번째 페이지 (레전드 게임 실력) -->
+    <!-- 2페이지 (레전드 게임 실력) -->
     <div id="page-2" class="hidden">
-      <div class="content-card page-2-card">
-        <div class="card-title-box">
-          <h2 class="card-title">🔥 레전드 게임 실력</h2>
+      <div class="content-card">
+        <img src="1000023921.jpg" alt="게임 사진" class="card-bg-img">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <div class="card-title-box">
+            <h2 class="card-title">🔥 레전드 게임 실력</h2>
+          </div>
+          <p class="card-desc">
+            김울은 발로란트 , 리그오브레전드 , FC온라인을 포함한 모든게임을 평균 이하로 못합니다. 특히 발로란트는 모든 계정을 포함한 최소 450랩을 찍었지만 골드에서도 "님 여기티어 맞아요?"라고 들을 정도로 재능이란것이 없다.
+          </p>
         </div>
-        <p class="card-desc">
-          김울은 발로란트 , 리그오브레전드 , FC온라인을 포함한 모든게임을 평균 이하로 못합니다. 특히 발로란트는 모든 계정을 포함한 최소 450랩을 찍었지만 골드에서도 "님 여기티어 맞아요?"라고 들을 정도로 재능이란것이 없다.
-        </p>
       </div>
       <div class="btn-container">
         <button id="prev-btn-2" class="action-btn secondary-btn">이전으로</button>
@@ -200,15 +226,19 @@
       </div>
     </div>
 
-    <!-- 세번째 페이지 (레전드 인성) -->
+    <!-- 3페이지 (레전드 인성) -->
     <div id="page-3" class="hidden">
-      <div class="content-card page-3-card">
-        <div class="card-title-box">
-          <h2 class="card-title">😈 레전드 인성</h2>
+      <div class="content-card">
+        <img src="1000019884.jpg" alt="인성 사진" class="card-bg-img">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <div class="card-title-box">
+            <h2 class="card-title">😈 레전드 인성</h2>
+          </div>
+          <p class="card-desc">
+            김울은 본인이 직접 약속을 잡고 파탄을 자주냅니다. 예시로는 먼저 노래방에 가자하여 다른사람들은 준비까지 다 하고 밖으로 나왔지만 김울에게 언제나오냐고 하면 "나 힘들어서 안감 ㅅㄱ" 라고 개 레전드 인성을 보여줍니다.
+          </p>
         </div>
-        <p class="card-desc">
-          김울은 본인이 직접 약속을 잡고 파탄을 자주냅니다. 예시로는 먼저 노래방에 가자하여 다른사람들은 준비까지 다 하고 밖으로 나왔지만 김울에게 언제나오냐고 하면 "나 힘들어서 안감 ㅅㄱ" 라고 개 레전드 인성을 보여줍니다.
-        </p>
       </div>
       <div class="btn-container">
         <button id="prev-btn-3" class="action-btn secondary-btn">이전으로</button>
@@ -216,17 +246,21 @@
       </div>
     </div>
 
-    <!-- 네번째 페이지 (그냥 JOAT) -->
+    <!-- 4페이지 (그냥 JOAT) -->
     <div id="page-4" class="hidden">
-      <div class="content-card page-4-card">
-        <div class="card-title-box">
-          <h2 class="card-title">👑 그냥 JOAT</h2>
+      <div class="content-card">
+        <img src="1000019948.jpg" alt="JOAT 사진" class="card-bg-img">
+        <div class="card-overlay"></div>
+        <div class="card-body">
+          <div class="card-title-box">
+            <h2 class="card-title">👑 그냥 JOAT</h2>
+          </div>
+          <p class="card-desc">
+            김울은 이게 사람인가? 싶을 정도로 레전드입니다.<br>
+            설명하는것이 불가능합니다 그냥 따라하세요<br><br>
+            <strong>" The JOAT "</strong>
+          </p>
         </div>
-        <p class="card-desc">
-          김울은 이게 사람인가? 싶을 정도로 레전드입니다.<br>
-          설명하는것이 불가능합니다 그냥 따라하세요<br><br>
-          <strong>" The JOAT "</strong>
-        </p>
       </div>
       <div class="btn-container">
         <button id="prev-btn-4" class="action-btn secondary-btn">이전으로</button>
@@ -252,37 +286,31 @@
     const prevBtn3 = document.getElementById('prev-btn-3');
     const prevBtn4 = document.getElementById('prev-btn-4');
 
-    // 1페이지 -> 2페이지
     nextBtn1.addEventListener('click', () => {
       page1.classList.add('hidden');
       page2.classList.remove('hidden');
     });
 
-    // 2페이지 -> 1페이지
     prevBtn2.addEventListener('click', () => {
       page2.classList.add('hidden');
       page1.classList.remove('hidden');
     });
 
-    // 2페이지 -> 3페이지
     nextBtn2.addEventListener('click', () => {
       page2.classList.add('hidden');
       page3.classList.remove('hidden');
     });
 
-    // 3페이지 -> 2페이지
     prevBtn3.addEventListener('click', () => {
       page3.classList.add('hidden');
       page2.classList.remove('hidden');
     });
 
-    // 3페이지 -> 4페이지
     nextBtn3.addEventListener('click', () => {
       page3.classList.add('hidden');
       page4.classList.remove('hidden');
     });
 
-    // 4페이지 -> 3페이지
     prevBtn4.addEventListener('click', () => {
       page4.classList.add('hidden');
       page3.classList.remove('hidden');
