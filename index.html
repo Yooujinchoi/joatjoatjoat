@@ -68,7 +68,7 @@
       object-fit: cover;
     }
 
-    /* 공통 배경 카드 스타일 (2페이지 & 3페이지) */
+    /* 공통 배경 카드 스타일 (2~4페이지) */
     .content-card {
       position: relative;
       background-size: cover;
@@ -89,6 +89,9 @@
     }
     .page-3-card {
       background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%), url('1000019884.jpg');
+    }
+    .page-4-card {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%), url('1000019948.jpg');
     }
     
     /* 제목 강조 스타일 */
@@ -209,6 +212,24 @@
       </div>
       <div class="btn-container">
         <button id="prev-btn-3" class="action-btn secondary-btn">이전으로</button>
+        <button id="next-btn-3" class="action-btn">다음</button>
+      </div>
+    </div>
+
+    <!-- 네번째 페이지 (그냥 JOAT) -->
+    <div id="page-4" class="hidden">
+      <div class="content-card page-4-card">
+        <div class="card-title-box">
+          <h2 class="card-title">👑 그냥 JOAT</h2>
+        </div>
+        <p class="card-desc">
+          김울은 이게 사람인가? 싶을 정도로 레전드입니다.<br>
+          설명하는것이 불가능합니다 그냥 따라하세요<br><br>
+          <strong>" The JOAT "</strong>
+        </p>
+      </div>
+      <div class="btn-container">
+        <button id="prev-btn-4" class="action-btn secondary-btn">이전으로</button>
       </div>
     </div>
 
@@ -221,12 +242,15 @@
     const page1 = document.getElementById('page-1');
     const page2 = document.getElementById('page-2');
     const page3 = document.getElementById('page-3');
+    const page4 = document.getElementById('page-4');
 
     const nextBtn1 = document.getElementById('next-btn-1');
     const nextBtn2 = document.getElementById('next-btn-2');
+    const nextBtn3 = document.getElementById('next-btn-3');
 
     const prevBtn2 = document.getElementById('prev-btn-2');
     const prevBtn3 = document.getElementById('prev-btn-3');
+    const prevBtn4 = document.getElementById('prev-btn-4');
 
     // 1페이지 -> 2페이지
     nextBtn1.addEventListener('click', () => {
@@ -250,6 +274,18 @@
     prevBtn3.addEventListener('click', () => {
       page3.classList.add('hidden');
       page2.classList.remove('hidden');
+    });
+
+    // 3페이지 -> 4페이지
+    nextBtn3.addEventListener('click', () => {
+      page3.classList.add('hidden');
+      page4.classList.remove('hidden');
+    });
+
+    // 4페이지 -> 3페이지
+    prevBtn4.addEventListener('click', () => {
+      page4.classList.add('hidden');
+      page3.classList.remove('hidden');
     });
   </script>
 
